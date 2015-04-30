@@ -44,7 +44,7 @@ def Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,find,fave,delta,dl,overlap,taper):
     nk = int(((kmax-kmin)/kinc+0.5)+1) 
     
     if (overlap == True):  
-        nwin = int(np.array*st[0].stats.npts/nsamp))*2-1
+        nwin = int(np.array(st[0].stats.npts/nsamp))*2-1
         xt = np.zeros((nr,nwin,nsamp))
         # splitting time sequence in nwin parts and storing result in xt[][][]
         # removing mean from time windows and applying tapper algorithm to surpress impact of windowing
@@ -221,7 +221,7 @@ def IAS_Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,find,fave,delta,dl,overlap,taper)
     nk = int(((kmax-kmin)/kinc+0.5)+1) 
     
     if (overlap == True):  
-        nwin = int(np.array*st[0].stats.npts/nsamp))*2-1
+        nwin = int(np.array(st[0].stats.npts/nsamp))*2-1
         xt = np.zeros((nr,nwin,nsamp))
         for i in range(nr):
             for j in range(nwin):
@@ -366,7 +366,7 @@ def FK(nsamp,nr,rx,ry,st,smin,smax,sinc,find,fave,delta,overlap,taper):
     
 
     if (overlap == True):  
-        nwin = int(np.array*st[0].stats.npts/nsamp))*2-1
+        nwin = int(np.array(st[0].stats.npts/nsamp))*2-1
         xt = np.zeros((nr,nwin,nsamp))
         for i in range(nr):
             for j in range(nwin):
@@ -484,7 +484,7 @@ def IAS_FK(nsamp,nr,rx,ry,st,smin,smax,sinc,find,fave,delta,overlap,taper):
 
 
     if (overlap == True):  
-        nwin = int(np.array*st[0].stats.npts/nsamp))*2-1
+        nwin = int(np.array(st[0].stats.npts/nsamp))*2-1
         xt = np.zeros((nr,nwin,nsamp))
         for i in range(nr):
             for j in range(nwin):
@@ -612,7 +612,7 @@ def CAS_Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,find,fave,delta,overlap,taper):
     dt = delta
     
     if (overlap == True):  
-        nwin = int(np.array*st[0].stats.npts/nsamp))*2-1
+        nwin = int(np.array(st[0].stats.npts/nsamp))*2-1
         xt = np.zeros((nr,nwin,nsamp))
         for i in range(nr):
             for j in range(nwin):
