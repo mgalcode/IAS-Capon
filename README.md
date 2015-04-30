@@ -15,7 +15,10 @@ Geophysical Journal International, 198(2), 1045–1054. doi:10.1093/gji/ggu183
 (I would like to thank Keith Koper who's conventional Capon code was very helpful and 
 is partially present in the IAS implementation.)
 
-
+Changelog
+=========
+30th April 2015
+- Fixed bug with obspy future dependency
 
 What you will need to run the code:
 =========

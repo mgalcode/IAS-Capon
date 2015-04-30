@@ -25,10 +25,10 @@ dt = st[0].stats.delta
 rx,ry = metric_mseed(st,dic_meta,nr)         
          
             
-#fk,sxopt,syopt,vel,rp,baz = FK(nsamp,nr,rx,ry,st,smin,smax,sinc,cap_find,cap_fave,dt,overlap=True,taper=True)
+fk,sxopt,syopt,vel,rp,baz = FK(nsamp,nr,rx,ry,st,smin,smax,sinc,cap_find,cap_fave,dt,overlap=True,taper=True)
 #fk,sxopt,syopt,vel,rp,baz = IAS_FK(nsamp,nr,rx,ry,st,smin,smax,sinc,cap_find,cap_fave,dt,overlap=True,taper=True)
 #fk,sxopt,syopt,vel,rp,baz,maa,pwe = Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,cap_find,cap_fave,dt,dl,overlap=True,taper=True)
-fk,sxopt,syopt,vel,rp,baz,maa,pwe = IAS_Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,cap_find,cap_fave,dt,dl,overlap=True,taper=True)
+#fk,sxopt,syopt,vel,rp,baz,maa,pwe = IAS_Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,cap_find,cap_fave,dt,dl,overlap=True,taper=True)
 #fk,sxopt,syopt,vel,rp,baz = CAS_Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,cap_find,cap_fave,dt,overlap=True,taper=True)
 
 
