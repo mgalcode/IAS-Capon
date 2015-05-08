@@ -35,7 +35,7 @@ fk,sxopt,syopt,vel,rp,baz,maa,pwe = IAS_Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,c
 
 
 
-#print arrival stats
+#print arrival stats, threshold prints the top x% of the slowness spectrum 
 print_stats(fk,threshold=0.15)
 
 
@@ -47,8 +47,8 @@ im = ax.imshow(fk.T,extent=[smin,smax, smax, smin],cmap='gist_stern_r',interpola
 plt.title('Slowness Spectrum at %.03f +- %.03f[Hz]' %(cap_find/(nsamp*dt),cap_fave/(nsamp*dt)))
 ax.set_xlim([smin,smax])
 ax.set_ylim([smin,smax])
-ax.set_xlabel('East/West Slowness [s/km]')
-ax.set_ylabel('North/South Slowness [s/km]')
+ax.set_xlabel('East/West Slowness [s/deg]')
+ax.set_ylabel('North/South Slowness [s/deg]')
 circle=plt.Circle((0,0),sp.sqrt((0.3*111.19)**2),color='w',fill=False,alpha=0.4)
 plt.gcf().gca().add_artist(circle)
 circle=plt.Circle((0,0),sp.sqrt((0.24*111.19)**2),color='w',fill=False,alpha=0.4)
