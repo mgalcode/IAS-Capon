@@ -35,7 +35,7 @@ fk,sxopt,syopt,vel,rp,baz = FK(nsamp,nr,rx,ry,st,smin,smax,sinc,cap_find,cap_fav
 
 
 #print arrival stats
-print_stats(fk,threshold=0.15)
+print_stats(fk,smin,smax,sinc,threshold=0.15)
 
 
 

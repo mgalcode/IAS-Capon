@@ -848,11 +848,15 @@ def testfir(st,cb,ct,n):
         xx[i] = np.fft.ifft(fft)
     return xx
     
-def print_stats(fk,threshold):
+
+
+    
+def print_stats(fk,smin,smax,sinc,threshold):
     import numpy as np
     import scipy as sp
     import scipy.ndimage.filters as filters
 
+    s = np.arange(smin,smax+sinc,sinc)
     tmp = []
     print '---------------------------'
     print '--- Arrival Information ---'
@@ -863,8 +867,8 @@ def print_stats(fk,threshold):
     this=np.empty([2,len(maxxi[0])])
     lth = np.amin(fk)*threshold
     for i in range(len(maxxi[0])):
-        this[0][i]=(maxxi[0][i]-100)*0.5
-        this[1][i]=(maxxi[1][i]-100)*0.5
+        this[0][i]=s[maxxi[0][i]]
+        this[1][i]=s[maxxi[1][i]]
         if (fk[maxxi[0][i],maxxi[1][i]] > lth):
             baz=np.math.atan2(this[0][i],this[1][i])*180.0/3.1415926
             if(baz<0.0):
@@ -874,8 +878,4 @@ def print_stats(fk,threshold):
             tmp.append([xamp,xvel,baz])
     tmp.sort(reverse=True)
     for i in range(len(tmp)):
-        print '%12.02f %19.02f %19.02f'%(tmp[i][0],tmp[i][1],tmp[i][2])
-
-
-    
-    
+        print '%12.02f %19.02f %19.02f'%(tmp[i][0],tmp[i][1],tmp[i][2])  

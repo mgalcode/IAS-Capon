@@ -36,7 +36,7 @@ fk,sxopt,syopt,vel,rp,baz,maa,pwe = IAS_Capon(nsamp,nr,rx,ry,st,smin,smax,sinc,c
 
 
 #print arrival stats, threshold prints the top x% of the slowness spectrum 
-print_stats(fk,threshold=0.15)
+print_stats(fk,smin,smax,sinc,threshold=0.15)
 
 
 
